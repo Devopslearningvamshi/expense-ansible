@@ -2,6 +2,6 @@
   hosts : all
   tasks:
     - name: install Nginx
-      ansible.bulidtin.dnf:
+      ansible.builtin.dnf:
         name: ngnix
         state: latest
