@@ -1,8 +1,12 @@
 - name : Frontend
   hosts : all
-  become : yes
+  become : yes   # this runs under the sudo user 
   tasks:
-    - name: install Nginx
+    - name: install Nginx 
       ansible.builtin.dnf:
         name: nginx
         state: latest
+    - name: Make sure a service unit is running    #this code give to run the service 
+      ansible.builtin.systemd_service:
+        state: restarted
+         name: nginx
