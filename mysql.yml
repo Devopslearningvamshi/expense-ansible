@@ -1,10 +1,10 @@
-- name : SQL
+- name : MYSQL
   hosts: all
   become: yes
   tasks:
-    - name: installing the sql
+    - name: Install mysql
         ansible.bulitin.dnf:
-          name: sql
+          name: mysql
           state: latest
 
     - name: restarting sql    #this code given to run the service 
