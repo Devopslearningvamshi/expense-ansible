@@ -2,8 +2,8 @@
   hosts: all
   become: yes
   tasks:
-    - name: install mysql
-      ansible.bulitin.dnf:
+    - name: install mysql 
+      ansible.builtin.dnf:
         name: mysql
         state: latest
 
