@@ -2,7 +2,7 @@
   hosts: all
   become: yes
   tasks:
-    - name: Install mysql
+    - name: install mysql
       ansible.bulitin.dnf:
         name: mysql
         state: latest
