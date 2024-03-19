@@ -2,12 +2,12 @@
   hosts: all
   become: yes
   tasks:
-    - name: install mysql 
+    - name: install MYSQL 
       ansible.builtin.dnf:
-        name: mysql
+        name: MYSQL
         state: latest
 
-    - name: restarting sql    #this code given to run the service 
+    - name: restarting MYSQL    #this code given to run the service 
       ansible.builtin.systemd_service:
         state: restarted
-        name: sql
+        name: MYSQL
