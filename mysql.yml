@@ -4,10 +4,10 @@
   tasks:
     - name: installing the sql
         ansible.bulitin.dnf:
-        name: sql
-        state: latest
+          name: sql
+          state: latest
 
     - name: restarting sql    #this code given to run the service 
         ansible.builtin.systemd_service:
-        state: restarted
-        name: sql
+          state: restarted
+          name: sql
