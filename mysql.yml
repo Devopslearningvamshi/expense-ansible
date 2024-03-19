@@ -1,6 +1,6 @@
 - name : MYSQL
-  hosts: all
-  become: yes
+  hosts : all
+  become : yes   # this runs under the sudo user 
   tasks:
     - name: install MYSQL 
       ansible.builtin.dnf:
