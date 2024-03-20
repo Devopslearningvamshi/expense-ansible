@@ -7,11 +7,11 @@
         name: mysql-server
         state: latest
 
-    - name: Start MySQL Service
-      ansible.builtin.systemd_service:
-         name: MySQL
-         state: started
-         enabled: yes
+    - name: MySQL service
+      ansible.builtin.service:
+        name: MySQL
+        state: restarted
+        enabled: yes
 
     - name: setup MySQL password
       ansible.builtin.shell: mysql_secure_installation --set-root-pass ExpenseApp@1 
