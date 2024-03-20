@@ -1,13 +1,13 @@
-- name : Mysql
+- name : MySQL Setup
   hosts: all
   become: yes
   tasks: 
-    - name: install mysql server
+    - name: install MYSQL server
       ansible.builtin.dnf:
-        name: Mysql-server
+        name: mysql-server
         state: latest
 
-    - name: start mysql
+    - name: start MySql Service
       ansible.builtin.systemd_service:
          name: mysql
          state: started
