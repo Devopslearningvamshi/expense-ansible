@@ -7,7 +7,7 @@
         name: mysql-server
         state: latest
 
-   name: start mysql    #this code given to run the service 
+    - name: start mysql    #this code given to run the service 
       ansible.builtin.systemd_service:
         state: restarted
         name: mysql
