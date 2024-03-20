@@ -8,8 +8,8 @@
         state: latest
 
     - name: start MySql Service
-      ansible.builtin.systemd_service:
-         name: mysql
+       ansible.builtin.systemd_service:
+         name: MySql
          state: started
          enabled: yes
 
