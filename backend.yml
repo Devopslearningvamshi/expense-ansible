@@ -3,18 +3,18 @@
   become: yes
   tasks:
     - name: disable nodejs
-      ansible.bulitin.shell: module disable nodejs -y
+      ansible.builtin.shell: module disable nodejs -y
 
     -name: enable nodejs v20
-      ansible.bulitin.shell: module enable nodejs -y
+      ansible.builtin.shell: module enable nodejs -y
     
     - name: install nodejs
-      ansible.bulitin.dnf:
+      ansible.builtin.dnf:
          name: install nodjs
          state: latest
 
     - name : user add expense
-      ansible.bulitin.user:
+      ansible.builtin.user:
          name: expense
 
     - name: Removing the directory    #precheck from the frontend
@@ -39,12 +39,12 @@
          state: latest
 
     - name: copying the backend service
-      ansible.bulitin.copy:
+      ansible.builtin.copy:
          src: backend.service
          dest: /etc/systemd/system/backend.service
     
     - name: Install mysql client
-      ansible.bulitin.dnf:
+      ansible.builtin.dnf:
          name: mysql
          state: latest
 
@@ -58,7 +58,7 @@
          login_host: mysql-dev.patelvamshidhardevops.online
 
     - name: start service
-        ansible.bulitin.systemd_service:
+        ansible.builtin.systemd_service:
          name: backend
          state: restart
          enabled: yes
