@@ -1,13 +1,14 @@
-- name : MYSQL
-  hosts : all
-  become : yes   # this runs under the sudo user 
-  tasks:
-    - name: install MYSQL 
-      ansible.builtin.dnf:
-        name: MYSQL
+- name : Mysql
+  hosts: all
+  tasks: 
+    - name: install mysql server
+      ansible.bulitin.dnf:
+        name: Mysql-server
         state: latest
-
-    - name: restarting MYSQL    #this code given to run the service 
-      ansible.builtin.systemd_service:
-        state: restarted
-        name: MYSQL
+    - name: start mysql
+      ansible.bulitin.systemd_service:
+         name: mysql
+         state: started
+         enabled: yes
+    - name: setup password
+      ansible.bulitin.shell: mysql_secure_installation --set-root-pass ExpenseApp@1
