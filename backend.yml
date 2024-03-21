@@ -62,8 +62,12 @@
          name: backend
          state: restarted
          enabled: yes
-         deamon_reload: yes
+         daemon-reload: yes
 
+#NOTE: if u get the error in the installing the mysql go to the backend server and install the below two app in the root user
+#sudo -i 
+#pip3.9 install PyMySQL
+#sudo pip3.9 install cryptography
 
       
 
