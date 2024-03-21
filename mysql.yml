@@ -10,7 +10,7 @@
     - name: MYSQL server    #this code given to run the service
       ansible.builtin.systemd_service:
         state: restarted
-        name: mysql
+        name: mysqld
         enabled: yes
 
     - name: setup MySQL password
