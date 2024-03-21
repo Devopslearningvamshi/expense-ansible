@@ -5,12 +5,12 @@
     - name: disable nodejs
       ansible.builtin.shell: module disable nodejs -y
 
-    -name: enable nodejs v20
+    - name: enable nodejs v20
       ansible.builtin.shell: module enable nodejs -y
     
     - name: install nodejs
       ansible.builtin.dnf:
-         name: install nodjs
+         name: install nodejs
          state: latest
 
     - name : user add expense
@@ -58,11 +58,11 @@
          login_host: mysql-dev.patelvamshidhardevops.online
 
     - name: start service
-        ansible.builtin.systemd_service:
+      ansible.builtin.systemd_service:
          name: backend
          state: restart
          enabled: yes
-        deamon_reload: yes
+         deamon_reload: yes
 
 
       
@@ -75,7 +75,3 @@
 
 
 
-
-#systemctl enable backend 
-#systemctl start backend
-#systemctl daemon-reload 
