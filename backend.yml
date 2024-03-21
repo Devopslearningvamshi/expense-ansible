@@ -42,6 +42,14 @@
       ansible.builtin.copy:
          src: backend.service
          dest: /etc/systemd/system/backend.service
+
+    - name: install python MYSQL Client
+      ansible.builtin.pip:
+         name: 
+          - PyMySQL
+          - cryptography
+         executable: pip3.9
+
     
     - name: Install mysql client
       ansible.builtin.dnf:
