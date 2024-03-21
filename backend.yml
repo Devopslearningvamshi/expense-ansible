@@ -6,7 +6,7 @@
       ansible.builtin.shell: module disable nodejs -y
 
     - name: enable nodejs v20
-      ansible.builtin.shell: module enable nodejs -y
+      ansible.builtin.shell: module disable nodejs -y
     
     - name: install nodejs
       ansible.builtin.dnf:
