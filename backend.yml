@@ -34,7 +34,7 @@
          remote_src: yes
 
     - name: Nodejs Dependency
-      ansible.general.npm:
+      community.general.npm:
          path: /app
          state: latest
 
