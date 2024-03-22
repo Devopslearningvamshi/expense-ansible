@@ -28,8 +28,8 @@
           dest: /usr/share/nginx/html
           remote_src: yes
 
-    - name: start nginx    #this code given to run the service 
+    - name: start Nginx    #this code given to run the service 
       ansible.builtin.systemd_service:
           state: restarted
-          name: nginx
+          name: Nginx
           enabled: yes
