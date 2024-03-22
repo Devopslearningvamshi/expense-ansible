@@ -31,5 +31,5 @@
     - name: start Nginx    #this code given to run the service 
       ansible.builtin.systemd_service:
           state: restarted
-          name: nginxd
+          name: nginx
           enabled: yes
